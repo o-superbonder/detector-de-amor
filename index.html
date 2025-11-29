@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Detector de Amor</title>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <meta name="robots" content="index,follow"/>
+  <meta name="generator" content="GrapesJS Studio">
+  <link rel="stylesheet" href="./style.css">
+  </head>
+  <body id="ipho"><div id="i4y2"><h1 id="iy1z">detector de amor 100% confiável</h1><div id="im60h">por samuel (o-superbonder no github) e um pouco do chatgpt</div></div><div data-type-role="flex-row" id="ixxk" class="gjs-plg-flex-row"><div data-type-role="flex-column" id="ipek" class="gjs-plg-flex-column"><input type="text" id="name1-2" name="name1" placeholder="Fulano"/><input type="text" name="name2" placeholder="Fulana" id="name2-2"/></div></div><div id="i5doy" class="gjs-divider"></div><button type="submit" id="in7bf"><div id="button-2">Enviar</div></button><div class="gjs-divider" id="ihxm8"></div><div id="i6amx"><div id="result"><span data-gs-mrk-fs="true" id="inpeh">(resultado)</span></div></div><script>
+      function detectLove(name1, name2) {
+        if (!name1 || !name2) return "digita a porra dos nome infeliz";
+
+        const sNames = ["samuel", "samuka", "samuca"];
+        const tNames = ["thiago", "tiago"];
+
+        const n1 = name1.toLowerCase();
+        const n2 = name2.toLowerCase();
+
+        // block if one is Samuel-type and the other is Thiago-type
+        if (
+          (sNames.includes(n1) && tNames.includes(n2)) ||
+          (tNames.includes(n1) && sNames.includes(n2))
+        ) {
+          return "suas coordenadas são 63° 2'56.73″S 60°57'32.38″W.";
+        }
+
+        const percent = Math.floor(Math.random() * 101);
+        return `esses idiotas se amam: ${percent}%`;
+      }
+
+      document.addEventListener("DOMContentLoaded", () => {
+        const button = document.getElementById("in7bf");
+        if (!button) return;
+
+        button.addEventListener("click", () => {
+          const name1 = document.getElementById("name1-2").value.trim();
+          const name2 = document.getElementById("name2-2").value.trim();
+          const resultText = detectLove(name1, name2);
+
+          document.getElementById("name1-2").value = "";
+          document.getElementById("name2-2").value = "";
+
+          const resultEl = document.getElementById("result");
+          if (resultEl) resultEl.innerText = resultText;
+        });
+      });
+    </script></body>
+</html>
